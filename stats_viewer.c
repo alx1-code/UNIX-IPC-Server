@@ -10,7 +10,7 @@
 #include <string.h>
 
 #define SHM_STATS_FILE      "server_stats.file"
-#define SHM_SIZE            (1024 * 1024)
+#define SHM_SIZE            (1024 * 1024) /* ~1MB */
 #define MAX_UIDS            1000
 #define LEN_LAST_PIDS       10
 #define ROOT                0
