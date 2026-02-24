@@ -4,6 +4,7 @@
 
 #include <fcntl.h>
 #include <unistd.h>
+#include <errno.h>
 #include <sys/mman.h>
 
 #define SHM_STATS_FILE      "server_stats.file"
@@ -24,6 +25,10 @@ struct ServerStats {
 int main(void) {
     int shm_fd = shm_open(SHM_STATS_FILE, O_RDWR);
     if (shm_fd == -1) {
+        if (errno == 2) {
+            fprintf(stderr, "отображаемая память файла %s не создана", SHM_STATS_FILE);
+            exit(1);
+        }
         perror("shm_open");
         exit(1);
     }
