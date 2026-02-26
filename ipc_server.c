@@ -41,7 +41,7 @@
 #define POLL_TIMEOUT        100 /* миллисекунд */
 
 
-/* api */
+/* --- api --- */
 void to_daemon(const char *);
 int lockfile(int fd);
 int already_running(void);
@@ -52,6 +52,7 @@ void *sig_thr(void *);
 void *handle_client(void *);
 void reread_env(void);
 int *parse_config(const char *, int *);
+/* ---------- */
 
 
 sigset_t mask;
