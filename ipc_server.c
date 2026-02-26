@@ -115,7 +115,7 @@ int main(int argc, char *argv[], char *envp[])
     if (shm_fd == -1) {
         syslog(LOG_ERR, "shm_open %s: %s", SHM_STATS_FILE, strerror(errno));
         cleanup();
-        exit(1);
+        exit(EXIT_FAILURE);
     }
     
     //syslog(LOG_DEBUG, "ftruncate...");
