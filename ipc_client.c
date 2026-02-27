@@ -1,5 +1,3 @@
-#define _GNU_SOURCE
-
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/stat.h>
@@ -8,16 +6,16 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define FIFO_NAME    "/tmp/c_fifo"
+#define FIFO_NAME       "/tmp/c_fifo"
 
-struct RequestClient {
+typedef struct {
     pid_t pid;
     char message[BUFSIZ];
-};
+} request_client_t;
 
 int main(void)
 {
-    struct RequestClient req;
+    request_client_t req;
     char message[BUFSIZ] = "hello from Client =)";
     int fd;
     
