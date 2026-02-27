@@ -123,7 +123,7 @@ int main(int argc, char *argv[], char *envp[])
         syslog(LOG_ERR, "ftruncate: %s", strerror(errno));
         close(shm_fd);
         cleanup();
-        exit(1);
+        exit(EXIT_FAILURE);
     }
 
     //syslog(LOG_DEBUG, "mmap...");
