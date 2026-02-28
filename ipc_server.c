@@ -199,7 +199,7 @@ void main(int argc, char *argv[], char *envp[])
     if (fd == -1) {
         syslog(LOG_ERR, "open %s: %s", FIFO_NAME, strerror(errno));
         closelog();
-        exit(1);
+        exit(EXIT_FAILURE);
     }
 
     struct pollfd pfd;
