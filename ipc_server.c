@@ -102,9 +102,8 @@ void main(int argc, char *argv[], char *envp[])
     snprintf(daemon_name, sizeof(daemon_name), "%s.%d", DAEMON_NAME, getpid());
     to_daemon(daemon_name);
 
-    if (already_running() < 0) {
+    if (already_running() < 0)
         exit(EXIT_FAILURE);
-    }
     
     //syslog(LOG_INFO, "СЕРВЕР ЗАПУЩЕН");
     
