@@ -105,8 +105,6 @@ void main(int argc, char *argv[], char *envp[])
     if (already_running() < 0)
         exit(EXIT_FAILURE);
     
-    //syslog(LOG_INFO, "СЕРВЕР ЗАПУЩЕН");
-    
     shm_unlink(SHM_STATS_FILE);
 
     //syslog(LOG_DEBUG, "shm_open...");
