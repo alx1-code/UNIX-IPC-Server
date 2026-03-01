@@ -106,8 +106,6 @@ void main(int argc, char *argv[], char *envp[])
         exit(EXIT_FAILURE);
     
     shm_unlink(SHM_STATS_FILE);
-
-    //syslog(LOG_DEBUG, "shm_open...");
     shm_fd = shm_open(SHM_STATS_FILE, O_CREAT | O_RDWR, 0644);
     if (shm_fd == -1) {
         syslog(LOG_ERR, "shm_open %s: %s", SHM_STATS_FILE, strerror(errno));
