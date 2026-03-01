@@ -121,7 +121,6 @@ void main(int argc, char *argv[], char *envp[])
         exit(EXIT_FAILURE);
     }
 
-    //syslog(LOG_DEBUG, "mmap...");
     stats = mmap(NULL, SHM_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, shm_fd, 0);
     if (stats == MAP_FAILED) {
         syslog(LOG_ERR, "невозможно отобразить память: %s", strerror(errno));
