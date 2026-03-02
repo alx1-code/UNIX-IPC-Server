@@ -325,7 +325,6 @@ void *handle_client(void *arg) {
     stats->last_pids[stats->last_index] = req->pid;
     
     // syslog(LOG_DEBUG, "последний индекс = %d", stats->last_index);
-    // syslog(LOG_DEBUG, "последний pid = %d", stats->last_pids[stats->last_index]);
     stats->total_requests ++;
     if (sem_post(semServerStats) < 0) {
         syslog(LOG_ERR, "sem_post: %s",strerror(errno));
