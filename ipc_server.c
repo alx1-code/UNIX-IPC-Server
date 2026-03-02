@@ -349,7 +349,7 @@ void *sig_thr(void *arg)
         if (ret != 0) {
             syslog(LOG_ERR, "невозможно дождаться сигнала: sigwait: %s", strerror(errno));
             cleanup();
-            exit(1);
+            exit(EXIT_FAILURE);
         }
 
         if (signo == SIGHUP) {
