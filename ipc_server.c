@@ -124,7 +124,7 @@ void main(int argc, char *argv[], char *envp[])
     if (stats == MAP_FAILED) {
         syslog(LOG_ERR, "невозможно отобразить память: %s", strerror(errno));
         cleanup();
-        exit(1);
+        exit(EXIT_FAILURE);
     }
     memset((struct ServerStats *) stats, 0, SHM_SIZE);
     
