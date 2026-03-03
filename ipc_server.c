@@ -156,7 +156,7 @@ void main(int argc, char *argv[], char *envp[])
         syslog(LOG_ERR, "sigaction: невозможно перехватить сигнал SIGCHLD:\
 %s", strerror(errno));
             cleanup();
-            exit(1);
+            exit(EXIT_FAILURE);
     }
 
     sigfillset(&mask);
