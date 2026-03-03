@@ -204,7 +204,7 @@ void main(int argc, char *argv[], char *envp[])
         if (ret == -1) {
             syslog(LOG_ERR, "poll: %s", strerror(errno));
             cleanup();
-            exit(1);
+            exit(EXIT_FAILURE);
         }
 
         if (pfd.revents & POLL_ERR) {
