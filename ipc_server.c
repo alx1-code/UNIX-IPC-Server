@@ -164,7 +164,7 @@ void main(int argc, char *argv[], char *envp[])
     if (pthread_sigmask(SIG_BLOCK, &mask, NULL) < 0 ) {
         syslog(LOG_ERR, "pthread_sigmask: %s", strerror(errno));
         cleanup();
-        exit(1);
+        exit(EXIT_FAILURE);
     }
     
     pthread_attr_init(&attr);
