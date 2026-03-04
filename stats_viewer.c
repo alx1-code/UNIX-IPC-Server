@@ -26,7 +26,7 @@ int main(void) {
     int shm_fd = shm_open(SHM_STATS_FILE, O_RDWR);
     if (shm_fd == -1) {
         perror("shm_open");
-        exit(1);
+        exit(EX_OSFILE);
     }
 
     server_stats_t *stats;
@@ -34,7 +34,7 @@ int main(void) {
         shm_fd, 0);
     if (stats == MAP_FAILED) {
         perror("mmap");
-        exit(EX_OSFILE);
+        exit(EXIT_FAILURE);
     }
 
     printf("Общее кол-во запросов на сервер: %d\n", stats->total_requests);
