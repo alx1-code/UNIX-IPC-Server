@@ -6,6 +6,7 @@
 #include <sys/lock.h>
 #include <sys/sysctl.h> 
 #include <sys/mman.h> /* POSIX IPC */
+#include <sysexits.h>
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -328,7 +329,7 @@ void *handle_client(void *arg) {
     if (sem_post(semServerStats) < 0) {
         syslog(LOG_ERR, "sem_post: %s",strerror(errno));
         cleanup();
-        exit(1);
+        exit(EXIT_FAILURE);
     }
 
     pthread_mutex_lock(&mtxActiveThr);
