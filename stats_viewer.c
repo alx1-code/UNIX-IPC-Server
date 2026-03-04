@@ -34,7 +34,7 @@ int main(void) {
         shm_fd, 0);
     if (stats == MAP_FAILED) {
         perror("mmap");
-        exit(1);
+        exit(EX_OSFILE);
     }
 
     printf("Общее кол-во запросов на сервер: %d\n", stats->total_requests);
