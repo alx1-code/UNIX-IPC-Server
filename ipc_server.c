@@ -90,7 +90,7 @@ struct {
     .mutex_env = PTHREAD_MUTEX_INITIALIZER,
 };
 
-void main(int argc, char *argv[], char *envp[])
+int main(int argc, char *argv[], char *envp[])
 {
     char daemon_name[_POSIX_NAME_MAX];
     int fd;
