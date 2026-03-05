@@ -40,6 +40,8 @@
 #define LEN_LAST_PIDS       10
 #define POLL_TIMEOUT        100 /* миллисекунд */
 
+#define MAX_ARGS            (sysconf(_SC_ARG_MAX))
+
 
 /* --- api --- */
 void to_daemon(const char *);
