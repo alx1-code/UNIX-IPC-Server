@@ -414,7 +414,7 @@ int lockfile(int fd)
     if (fcntl(fd, F_SETLK, &lock) < 0) {
         return(-1);
     }
-    return(0);
+    return(EXIT_SUCCESS);
 }
 
 int already_running(void)
@@ -445,7 +445,7 @@ int already_running(void)
         exit(1);
     }
 
-    return(0);
+    return(EXIT_SUCCESS);
 }
 
 void to_daemon(const char *cmd)
