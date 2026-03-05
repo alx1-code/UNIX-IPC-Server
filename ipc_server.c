@@ -188,8 +188,7 @@ int main(int argc, char *argv[], char *envp[])
         }
     }
 
-    fd = open(FIFO_NAME, O_RDWR);
-    if (fd == -1) {
+    if ((fd = open(FIFO_NAME, O_RDWR)) == -1) {
         syslog(LOG_ERR, "open %s: %s", FIFO_NAME, strerror(errno));
         closelog();
         exit(EXIT_FAILURE);
